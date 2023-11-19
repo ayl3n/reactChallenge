@@ -2,43 +2,50 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  background-color:#8BC802;
+  border-radius: 25px;
+  width: 50%;
+  margin: auto;
+  padding: 30px;
 }
 
-.App-header {
-  background-color: #363037;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: top;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.buttons {
+  border-radius: 50px;
+  background-color: #ffc14d;
+  color:#F86F15;
+  border: #F86F15;
 }
-
 .inventory-table {
   width: 40%;
   border-collapse: collapse;
-  margin-top: 20px;
-  border: 1px solid #dddddd;
-  padding: 8px;
-  background-color: #635970;
+  margin-top: 120px;
+  background-color: #E1EF7B;
+  color: #079057;
   position: fixed;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
+  border-radius: 25px;
 }
 
 .table-elem {
-  border: 1px solid #dddddd;
-  padding: 8px;
+  color: #079057;
+  border-radius: 25px;
+  letter-spacing: 3px;
+  font-size: 20px;
 }
 
 .totalQuantity {
   width: 40%;
   border-collapse: collapse;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #dddddd;
-  padding: 8px;
-  position: absolute;
-  bottom: 0;
-  background-color: #635970;
-  
+  margin-top: 100px;
+  margin-bottom: 400px;
+  border-radius: 25px;
+  position: relative;
+  top: 200px;
+  background-color: #ffc14d;
+  color:#F86F15;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 20px;
+  text-align: auto;
+  padding: 20px;
 }

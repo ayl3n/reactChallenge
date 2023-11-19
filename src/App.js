@@ -49,10 +49,10 @@ function App() {
     <div className="App">
       <table className= "inventory-table">
         <thead>
-          <tr className='table-elem'>
+            <tr className='table-elem'>
             <th>Cantidad</th>
             <th>Descripcion</th>
-            <th>Subtotal</th>
+            <th>Precio</th>
             <th>Total</th>
           </tr>
         </thead>
@@ -60,9 +60,9 @@ function App() {
           {inventory.map((item) => (
             <tr key={item.id} >
               <td>
-              <button onClick={() => decreaseQuantity(item.id)}>-</button>
+              <button className = 'buttons' onClick={() => {decreaseQuantity(item.id)}}>-</button>
               {item.quantity}
-              <button onClick={() => increaseQuantity(item.id)}>+</button>
+              <button className = 'buttons' onClick={() => increaseQuantity(item.id)}>+</button>
               </td>
               <td>{item.name}</td>
               <td>${item.price.toFixed(2)}</td>
@@ -72,11 +72,14 @@ function App() {
           ))}
         </tbody>
       </table>
-        
-      <table className='totalQuantity'>
-      <tr>Cantidad de Items: {totalItemCount}</tr>
-      <tr>Precio Total: $ {(totalPrice)} </tr>
+
+      <div className='totalQuantity'>
+      <table >
+      <th>Cantidad de Items: {totalItemCount}</th>
+      <th>Precio Total: ${(totalPrice)}</th>
       </table>
+      </div>  
+    
 
     </div>
   );
