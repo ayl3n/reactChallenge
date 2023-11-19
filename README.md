@@ -3,4 +3,4 @@
 
 ## Instrucciones de ejecucion: 
  Ejecutar en la terminal los siguientes comandos: 
- 1. npm run
+ 1. npm start
