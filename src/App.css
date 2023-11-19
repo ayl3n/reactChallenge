@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: #635970;
   display: flex;
   justify-content: center;
 }
@@ -22,9 +21,24 @@
   margin-top: 20px;
   border: 1px solid #dddddd;
   padding: 8px;
+  background-color: #635970;
+  position: fixed;
 }
 
 .table-elem {
   border: 1px solid #dddddd;
   padding: 8px;
+}
+
+.totalQuantity {
+  width: 40%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+  padding: 8px;
+  position: absolute;
+  bottom: 0;
+  background-color: #635970;
+  
 }

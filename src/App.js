@@ -3,12 +3,16 @@ import './App.css';
 
 function App() {
   const [inventory, setInventory] = useState([
-    { id: 1, name: 'Product A', quantity: 0, price: 10.00 },
-    { id: 2, name: 'Product B', quantity: 0, price: 20.00 },
-    { id: 3, name: 'Product C', quantity: 0, price: 5.00},
-    { id: 4, name: 'Product D', quantity: 0, price: 10.00}
+    { id: 1, name: 'Arroz', quantity: 0, price: 100.00 },
+    { id: 2, name: 'Gaseosa', quantity: 0, price: 80.00 },
+    { id: 3, name: 'Fernet', quantity: 0, price: 150.00},
+    { id: 4, name: 'Pan', quantity: 0, price: 25.00},
+    { id: 5, name: 'Café', quantity: 0, price: 50.00}
   ]);
 
+  const [totalItemCount, setTotalItemCount] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  
   const increaseQuantity = (id) => {
     setInventory((prevInventory) =>
       prevInventory.map((item) =>
@@ -18,13 +22,28 @@ function App() {
   };
 
   const decreaseQuantity = (id) => {
-    setInventory((prevInventory) =>
+      setInventory((prevInventory) =>
       prevInventory.map((item) =>
         item.id === id ? { ...item, quantity: item.quantity - 1 } : item
-      )
+       )
     );
   };
 
+  const calculateTotal = () => {
+    const totalItemCount = inventory.reduce((total, item) => {
+      return total + item.quantity;
+    },0 );
+  
+    setTotalItemCount(totalItemCount);
+
+    const totalAmount = inventory.reduce((total, item) => total + item.quantity * item.price, 0);
+    setTotalPrice(totalAmount);
+  };
+
+  React.useEffect(() => {
+    calculateTotal();
+  }, [inventory]);
+  
     
   return (
     <div className="App">
@@ -35,7 +54,6 @@ function App() {
             <th>Descripcion</th>
             <th>Subtotal</th>
             <th>Total</th>
-            <th>Quitar</th>
           </tr>
         </thead>
         <tbody>
@@ -54,8 +72,13 @@ function App() {
           ))}
         </tbody>
       </table>
+        
+      <table className='totalQuantity'>
+      <tr>Cantidad de Items: {totalItemCount}</tr>
+      <tr>Precio Total: $ {(totalPrice)} </tr>
+      </table>
+
     </div>
   );
 }
-
 export default App;
