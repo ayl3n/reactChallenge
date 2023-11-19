@@ -5,6 +5,8 @@ function App() {
   const [inventory, setInventory] = useState([
     { id: 1, name: 'Product A', quantity: 0, price: 10.00 },
     { id: 2, name: 'Product B', quantity: 0, price: 20.00 },
+    { id: 3, name: 'Product C', quantity: 0, price: 5.00},
+    { id: 4, name: 'Product D', quantity: 0, price: 10.00}
   ]);
 
   const increaseQuantity = (id) => {
